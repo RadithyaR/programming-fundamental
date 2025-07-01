@@ -5,16 +5,16 @@ for (var i = 1; i <= limit; i++) {
     console.log(input + " x " + i);
 }
 //check whether a string is a palindrome or not.
-// const word: string = "madam";
-// let wordSplit = word.split("");
-// let rev = word.split("").reverse();
-// console.log(wordSplit);
-// console.log(rev);
-// if(wordSplit == rev){
-//     console.log(`${word} -> palindrome`);
-// }else{
-//     console.log(`${word} -> not palindrome`);
-// }
+var isPalindrome = function (str) {
+    var arrStr = str.split("");
+    var reverseArr = arrStr.reverse();
+    var reverseStr = reverseArr.join("");
+    if (str === reverseStr) {
+        return true;
+    }
+    return false;
+};
+console.log("is palindrom = ".concat(isPalindrome("ayam")));
 //a code to convert centimeter to kilometer
 var num = 100000;
 var convertCm = 100000;
@@ -34,8 +34,8 @@ console.log(beforeStr + afterStr);
 //code to capitalize the first letter of each word in a string
 var captWord = "hello world";
 // a code to swap the case of each character from string 
-var sentence = "ThE QuiCk BrOwN Fox";
-var sentenceRes = "";
+var sentence = "The QuiCk BrOwN Fox";
+var sentenceResult = "";
 for (var i = 0; i < sentence.length; i++) {
     var huruf = sentence.charAt(i);
     var isCapitalize = huruf === huruf.toUpperCase();
@@ -50,9 +50,9 @@ for (var i = 0; i < sentence.length; i++) {
     else {
         result = huruf.toUpperCase();
     }
-    sentenceRes += result;
+    sentenceResult += result;
 }
-console.log(sentenceRes);
+console.log(sentenceResult);
 // a code to find the largest of two given integers
 var num1 = 42;
 var num2 = 27;

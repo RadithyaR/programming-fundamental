@@ -7,19 +7,21 @@ for(let i = 1; i <= limit; i++){
 }
 
 //check whether a string is a palindrome or not.
-// const word: string = "madam";
+const isPalindrome = (str:string) => {
+    const arrStr = str.split("");
 
-// let wordSplit = word.split("");
-// let rev = word.split("").reverse();
+    const reverseArr = arrStr.reverse();
 
-// console.log(wordSplit);
-// console.log(rev);
+    const reverseStr = reverseArr.join("");
 
-// if(wordSplit == rev){
-//     console.log(`${word} -> palindrome`);
-// }else{
-//     console.log(`${word} -> not palindrome`);
-// }
+    if(str === reverseStr){
+        return true;
+    }
+
+    return false;
+};
+
+console.log(`is palindrom = ${isPalindrome("ayam")}`);
 
 //a code to convert centimeter to kilometer
 const num:number = 100000;
@@ -48,7 +50,7 @@ console.log(beforeStr + afterStr);
 const captWord:string = "hello world";
 
 // a code to swap the case of each character from string 
-const sentence = "ThE QuiCk BrOwN Fox";
+const sentence = "The QuiCk BrOwN Fox";
 let sentenceResult: string = "";
 
 for(let i = 0; i < sentence.length;i++){
@@ -65,7 +67,7 @@ for(let i = 0; i < sentence.length;i++){
        result = huruf.toUpperCase();
     }
 
-    sentenceResult = sentenceResult + result;
+    sentenceResult +=  result;
 }
 
 console.log(sentenceResult);
