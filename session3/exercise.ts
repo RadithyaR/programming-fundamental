@@ -143,5 +143,6 @@ for(let i = 0; i < kalimat.length; i++){
 
     hasilKalimat = hasilKalimat + huruf;
 }
+
 console.log(hasilKalimat);
 
