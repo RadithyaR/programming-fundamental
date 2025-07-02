@@ -10,11 +10,15 @@ function triangle (heigth: number){
     let result: string = "";
     let num: number = 1;
 
-    for(let i: number = 0; i <= heigth; i++){
-        for(let j:number = 1; j <= i; j++){
-            const numToStr: string = num.toString(); //num diubah kestring
-            const formattedStr:string = numToStr.padStart(2, "0"); // padStart(targetLength, padString) formatted 0 terlebih dahulu sebanyak 2 digit
-            result += `${formattedStr} `;
+    for(let i: number = 0; i <= heigth; i++){ //row
+        for(let j:number = 1; j <= i; j++){//column
+            // const numToStr: string = num.toString(); //num diubah kestring
+            // const formattedStr:string = numToStr.padStart(2, "0"); // padStart(targetLength, padString) formatted 0 terlebih dahulu sebanyak 2 digit
+            if(num < 10){
+                result += `0${num} `;
+            }else{
+                result += `${num} `;
+            }           
             num++; 
         }
         result += "\n";
@@ -22,7 +26,7 @@ function triangle (heigth: number){
     return result;
 }
 
-console.log(triangle(4));
+console.log(triangle(5));
 
 /** ● Create a function that can loop the number of times according to the input we provide, and will
 replace multiples of 3 with "Fizz", multiples of 5 with "Buzz", multiples of 3 and 5 with
@@ -94,6 +98,7 @@ numbers only
 ○ Example : [1,2,3,4,5,6,7,8,9,10] → [2,4,6,8,10]
  */
 const removeOddArr = (arr: number[]) => {
+    // return arr.filter((el) => el % 2 === 0);
     let result: number[] = [];
 
     for(let i = 0; i < arr.length; i++){

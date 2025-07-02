@@ -9,18 +9,23 @@ following :
 function triangle(heigth) {
     var result = "";
     var num = 1;
-    for (var i = 0; i <= heigth; i++) {
-        for (var j = 1; j <= i; j++) {
-            var numToStr = num.toString(); //num diubah kestring
-            var formattedStr = numToStr.padStart(2, "0"); // padStart(targetLength, padString) formatted 0 terlebih dahulu sebanyak 2 digit
-            result += "".concat(formattedStr, " ");
+    for (var i = 0; i <= heigth; i++) { //row
+        for (var j = 1; j <= i; j++) { //column
+            // const numToStr: string = num.toString(); //num diubah kestring
+            // const formattedStr:string = numToStr.padStart(2, "0"); // padStart(targetLength, padString) formatted 0 terlebih dahulu sebanyak 2 digit
+            if (num < 10) {
+                result += "0".concat(num, " ");
+            }
+            else {
+                result += "".concat(num, " ");
+            }
             num++;
         }
         result += "\n";
     }
     return result;
 }
-console.log(triangle(4));
+console.log(triangle(5));
 /** ● Create a function that can loop the number of times according to the input we provide, and will
 replace multiples of 3 with "Fizz", multiples of 5 with "Buzz", multiples of 3 and 5 with
 "FizzBuzz".
@@ -48,7 +53,7 @@ var fizzBuzz = function (n) {
     }
     return "result = ".concat(result, " ");
 };
-var res = fizzBuzz(30);
+var res = fizzBuzz(15);
 console.log(res);
 /***
  * ● Create a function to calculate Body Mass Index (BMI)
